@@ -3,13 +3,13 @@
 
 年初的时候电脑rdp被爆破，导致电脑数据被加密，索性是虚拟机影响不大，最近分析了发现这是可解的，所以写了这个工具。
 
-本工具是针对.peng 和 .kuan 后缀的勒索病毒样本的离线恢复工具。
+本工具是针对.peng  后缀的勒索病毒样本的离线恢复工具。
 
 
 
 ## 快速开始
 
-### 1. 提取 mask
+### 1. 提取 mask 
 
 准备一对原始文件和加密文件（都至少 64KB）提取 mask：
 
@@ -33,7 +33,7 @@ python3 tools/recover_peng_partial.py \
 --output-dir "/path/to/recovered_test"
 ```
 
-**原地批量恢复（确认 mask 正确后）：**
+**原地批量恢复（直接修改本地的加密文件）（风险，不推荐）：**
 
 ```bash
 python3 tools/restore_peng_inplace.py \
@@ -51,7 +51,6 @@ python3 tools/restore_peng_inplace.py \
 | `recover_peng_partial.py` | 恢复到新目录，不修改原文件 |
 | `restore_peng_inplace.py` | 原地批量恢复，适合大规模恢复 |
 | `extract_peng_metadata.py` | 批量提取 metadata |
-| `evtx_rdp_triage.py` | 从 Windows evtx 提取 RDP/登录事件 |
 
 ## 常用参数
 
